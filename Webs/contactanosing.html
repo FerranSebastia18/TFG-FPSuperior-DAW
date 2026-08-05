@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FerRent.es</title>
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function () {
+        document.querySelectorAll('.error-message').forEach(function (element) {
+            element.textContent = '';
+        });
+
+        var nombre = document.getElementById('nombre').value.trim();
+        var telefono = document.getElementById('telefono').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var comentarios = document.getElementById('comentarios').value.trim();
+        var politica = document.getElementById('politica').checked;
+
+        var hasError = false;
+
+        if (nombre === '') {
+            document.getElementById('nombre-error').textContent = 'Por favor, ingresa tu nombre.';
+            hasError = true;
+        }
+
+        if (!/^\d{9}$/.test(telefono)) {
+            document.getElementById('telefono-error').textContent = 'El teléfono debe contener 9 números.';
+            hasError = true;
+        }
+
+        if (!/\S+@\S+\.\w+/.test(email)) {
+            document.getElementById('email-error').textContent = 'Por favor, ingresa un email válido.';
+            hasError = true;
+        }
+
+        if (!politica) {
+            document.getElementById('politica-error').textContent = 'Debes aceptar la política de privacidad.';
+            hasError = true;
+        }
+
+        if (!hasError) {
+            document.getElementById('success-message').textContent = 'Formulario enviado correctamente!';
+            document.getElementById('form').reset();
+        }
+    });
+    </script>
+    <style>
+        @media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media screen and (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+.imagenlogo {
+    max-width: 100%;
+    height: auto;
+}
+.dropbtn {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bfdfff;
+            color: #333;
+        }
+        header {
+            background-color: #0e6eb8;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #2196f3;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2196f3;
+            min-width: 120px;
+            z-index: 1;
+            top: 50px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .dropdown-content img {
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #0e6eb8;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        .dropbtn{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: grey;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.dropbtn:hover{
+    border-color: grey;
+    transition: .5s;
+}
+
+
+.inicio{
+    width: 100%;
+    text-align: center;
+}
+#contact-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-bottom: 15px;
+        }
+
+        #submit-btn {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="indexing.html"><h1><img src="logo.png" alt="" class="imagenlogo" height="184" width="245"> <br>Fer Rent</h1></a>
+    </header>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Languages</button>
+            <div class="dropdown-content">
+                <a href="indexesp.html"><img src="españa.png" alt="Español">Spanish</a>
+                <a href="indexing.html"><img src="ingles.png" alt="Inglés"> English</a>
+            </div>
+        </div>
+        <a href="alojamientosing.html">Accommodations</a>
+        <a href="conocenosing.html">know us</a>
+        <a href="contactanosing.html">Contact Us</a>
+        <a href="politicadeprivacidading.html">Privacy Policy</a>
+        
+    </nav>
+    <section class="inicio">
+        <h2><u><b>Contact Us</b></u></h2>
+        <div id="contact-form">
+            <h2>Contact Form</h2>
+            <form id="form">
+                <input type="text" id="nombre" placeholder="Name">
+                <div id="nombre-error" class="error-message"></div>
+        
+                <input type="tel" id="telefono" placeholder="Telefon Number">
+                <div id="telefono-error" class="error-message"></div>
+        
+                <input type="email" id="email" placeholder="Email">
+                <div id="email-error" class="error-message"></div>
+        
+                <textarea id="comentarios" placeholder="Comments"></textarea>
+        
+                <input type="checkbox" id="politica">
+                <label for="politica">I accept the <a href="politicadeprivacidad.html"> Privacy Policy</a></label>
+                <div id="politica-error" class="error-message"></div>
+        
+                <button type="button" id="submit-btn">Send</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 Fer Rent. Todos los derechos reservados.</p> <br>
+        <p>+34 123 45 67 89 <br>Email: contacto@ferrent.es</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,648 @@
+
+/* Configuración básica de HTML */
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    max-width: 100%; /* Previene el overflow horizontal */
+    overflow-x: hidden;
+}
+
+/* Estilos base del cuerpo de la página */
+body {
+    font-family: "Signika Negative", sans-serif;
+    background-color: #fff7f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Margen específico para secciones del cuerpo */
+.body-seccion{
+    margin: 0px 160px;
+}
+
+/* Estilo para todos los párrafos */
+p{
+    font-size: 20px;
+}
+
+/* Estilos para los TITULOS H2 */
+h2 {
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 600;
+    color: #2B2D42;
+    font-size: 42px;
+    margin: 30px 0;
+    padding: 0;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+/* Línea decorativa debajo de los títulos H2 */
+h2::after {
+    content: '';
+    display: block;
+    width: 100%; 
+    height: 2px;
+    background-color: #EF233C;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+/* Ajustes para el último título "Contacto" */
+section:last-of-type h2 {
+    margin-bottom: 0;
+}
+
+/* Estilos generales para el encabezado */
+header {
+    background-color: #ef233c;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Contenedor para logo, título y botón en el header */
+.logo-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Estilos para el logo en el header */
+.logo {
+    width: 170px;
+    height: 170px;
+    margin: 20px 50px 0px 20px;
+    border-radius: 100px;
+}
+
+/* Estilos para el título principal en el header */
+.title-nav{
+    align-items: center;
+}
+
+/* Estilos para el botón de "RENTALHOLIDAYS.ES" */
+.btn-rental {
+    font-size: 1rem;
+    padding: 0.8em 2em;
+    background-color: #fff;
+    border: 3px solid #ef233c;
+    border-radius: 5px;
+    color: #ef233c;
+    font-weight: bolder;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: -5px 5px 0px 0px #fff;
+    cursor: pointer;
+}
+
+/* Efecto hover para el botón principal */
+.btn-rental:hover {
+    transform: translate(5px, -5px);
+}
+
+/* Estilos para el título H1 en el header */
+header h1 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px 250px;
+    font-size: 70px;
+}
+
+/* Configuración del menú de navegación */
+nav {
+    width: 100%;
+}
+
+/* Estilo para la lista de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos para los elementos de la lista de navegación */
+nav ul li {
+    display: inline;
+}
+
+/* Estilos para los enlaces en la navegación */
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: larger;
+    padding: 5px 10px;
+}
+
+/* Efecto hover para los enlaces de navegación */
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Le quitamos el cambio de cursor al pasarlo por encima */
+.linia{
+    cursor: default;
+}
+
+/* Configuración del contenedor del título del alojamiento y botón en la sección principal */
+#titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Estilos para el título H1 dentro de la sección #titulo */
+#titulo h1 {
+    margin: 0;
+}
+
+/* Estilos para el botón de "Más Información" */
+.btn-info button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(239, 35, 60);
+    font-size: 14px;
+    font-family: "Signika Negative", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #ef233c;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+/* Efecto hover para el botón de "Más Información" */
+.btn-info button:hover {
+    color: #fff;
+    background: rgb(239, 35, 60);
+    box-shadow: 0 0 30px 5px rgba(255, 86, 63, 0.815);
+    transition: all 0.2s ease-out;
+}
+
+/* Efecto de animación para el botón de "Más Información" al hacer hover */
+.btn-info button:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+/* Estilos para el pseudo-elemento before del botón de "Más Información" */
+.btn-info button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    transform: skewX(-20deg);
+}
+
+/* Animación para el efecto de deslizamiento del botón */
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+/* Estilos para el botón de "Más Información" al ser activado */
+.btn-info button:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+    background-image: url('https://www.rentalholidays.es/');
+}
+
+/* Estilos para el contenedor principal de la imagen destacada */
+.contenedor-imagen-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(158, 158, 158, 0.20);
+    border-radius: 5px;
+    position: relative;
+    height: 80vh;
+}
+
+/* Estilos para la imagen principal dentro del contenedor */
+.contenedor-imagen-principal img {
+    max-width: 90%;
+    max-height: 80vh;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Estilos para el contenedor de desplazamiento de miniaturas */
+.contenedor-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    background-color: rgb(158, 158, 158, 0.20);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Estilos para la scrollbar (para navegadores basados en WebKit) */
+.contenedor-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 15px;
+}
+
+.contenedor-scroll::-webkit-scrollbar-track {
+    background: rgba(158, 158, 158, 0.20);
+    border-radius: 5px;
+}
+
+.contenedor-scroll::-webkit-scrollbar-thumb {
+    background-color: #ef233c;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+/* Estilos para el contenedor de miniaturas */
+.contenedor-miniaturas {
+    display: inline-flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Estilos para cada miniatura dentro del contenedor */
+.contenedor-miniaturas img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.contenedor-miniaturas img.miniatura {
+    width: 150px;
+    height: 120px;
+    transition: transform 0.1s ease;
+}
+
+/* Efecto hover para las miniaturas */
+.contenedor-miniaturas img.miniatura:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para la miniatura seleccionada */
+.contenedor-miniaturas img.miniatura.seleccionada {
+    border: 3px solid #ef233c;
+}
+
+/* Estilos para los botones de flecha izquierda y derecha */
+.flecha {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    z-index: 2;
+}
+
+.flecha.izquierda {
+    left: 150px;
+    border-radius: 3px;
+}
+
+.flecha.derecha {
+    right: 150px;
+    border-radius: 3px;
+}
+
+/* Efecto hover para los botones de flecha */
+.flecha:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para la sección de información, descripción, servicios y ubicación */
+#informacion, #descripcion, #servicios, #ubicacion{
+    margin: 10px 20px;
+    font-weight: bold;
+}
+
+/* Estilos para el texto en la sección de descripción */
+#descripcion p{
+    line-height: 25px;
+}
+
+/* Estilos para la lista de servicios ofrecidos */
+.lista-servicios {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    cursor: default;
+}
+
+/* Estilos para cada ítem en la lista de servicios */
+.lista-servicios li {
+    background-color: rgba(255, 86, 63, 0.815);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    min-height: 70px;
+    transition: all 0.2s ease-in;
+}
+
+/* Efecto hover para los ítems en la lista de servicios */
+.lista-servicios li:hover{
+    transition: all 0.2s ease-out;
+    transform: translateY(-5px);
+}
+
+/* Estilos para el iframe del mapa en la sección de ubicación */
+iframe {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+    margin: 10px 0px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para los subtítulos dentro de secciones como contacto */
+.h2-contacto{
+    text-align: left;
+    margin: 10px 30px;
+}
+
+/* Estilos para el contenedor de botones de contacto */
+.botones-contacto {
+    display: inline-flex;
+    flex-direction: inherit;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    justify-content: center;
+    font-family: "Signika Negative", sans-serif;
+}
+
+/* Estilos para los botones individuales de contacto */
+.boton-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 28px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 130px;
+    height:50px;
+    font-size: 18px;
+}
+
+/* Efecto hover para botones de contacto, aumenta la sombra y cambia el fondo */
+.boton-contacto:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.1);
+    background-color: #ef3054;
+    color: white;
+}
+
+/* Estilos para los iconos dentro de los botones de contacto */
+.icono-boton {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-size: cover;
+}
+
+/* URL's iconos de diferentes plataformas en botones de contacto */
+.icono-boton.mail {background-image: url('https://cdn-icons-png.flaticon.com/128/3447/3447672.png');}
+.icono-boton.whatsapp {background-image: url('https://cdn-icons-png.flaticon.com/128/1384/1384023.png');}
+.icono-boton.website {background-image: url('https://cdn-icons-png.flaticon.com/128/11221/11221963.png');}
+.icono-boton.instagram {background-image: url('https://cdn-icons-png.flaticon.com/128/717/717392.png');}
+.icono-boton.facebook {background-image: url('https://cdn-icons-png.flaticon.com/128/747/747374.png');}
+.icono-boton.tiktok {background-image: url('https://cdn-icons-png.flaticon.com/128/5968/5968812.png');}
+
+/* Estilos para el texto dentro de los botones de contacto */
+.texto-boton {
+    font-weight: bold;
+}
+
+/* Estilos generales para secciones */
+section {
+    padding: 10px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* Estilos para texto dentro del footer */
+footer p{
+    font-size: 15px;
+}
+
+/* Estilos para enlaces dentro del footer */
+footer a{
+    color: #abc4ff;
+    text-decoration: none;
+}
+
+/* Estilos para la barra horizontal en el footer */
+footer hr{
+    width: 200px;
+}
+
+/* Estilos para la parte superior del footer */
+.up-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos para la parte inferior del footer */
+.down-footer{
+    text-align: center;
+}
+
+/* ESTILOS PARA MOVILES */
+@media only screen and (max-width: 768px) {
+
+    /* Estilos generales para el cuerpo y secciones en pantallas pequeñas */
+    body, .body-seccion, #titulo, #informacion, #descripcion, #servicios, #ubicacion, #contacto {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Reducción de tamaños de texto para mejorar la legibilidad en dispositivos móviles */
+    p, h1, h2 {
+        font-size: 18px;
+    }
+
+    /* Reorganización del header para adaptarse a pantallas estrechas */
+    header, .logo-title-container {
+        flex-direction: column;
+        text-align: center;
+        margin: 5px;
+    }
+
+    /* Ajuste de tamaño del logo en dispositivos móviles */
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+    }
+
+    /* Eliminación de separadores visuales en dispositivos móviles */
+    .linia{
+        display: none;
+    }
+
+    /* Alineación vertical de elementos de navegación en dispositivos móviles */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Aumento del área de toque para enlaces en navegación */
+    nav ul li a {
+        padding: 8px;
+    }
+
+    /* Ajustes para los contenedores de imágenes principal y de scroll en dispositivos móviles */
+    .contenedor-imagen-principal, .contenedor-scroll {
+        width: 100%;
+        padding: 0px;
+    }
+
+    /* Cambios en la disposición del contenedor de la imagen principal para adaptarse a la verticalidad */
+    .contenedor-imagen-principal {
+        flex-direction: column;
+        height: auto;
+        padding: 5px;
+        margin: 0;
+        background-color: rgba(158, 158, 158, 0.5);
+    }
+
+    /* Ajuste para que la imagen principal ocupe todo el ancho disponible */
+    .contenedor-imagen-principal img {
+        width: 100%;
+        max-height: none;
+    }
+
+    /* Reducción del tamaño de las miniaturas en dispositivos móviles */
+    .contenedor-miniaturas img {
+        width: 80px;
+    }
+
+    /* Ajustes de los botones para mejorar la accesibilidad en dispositivos táctiles */
+    .btn-rental, .btn-info button, .boton-contacto {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Ocultación de flechas de navegación en la imagen principal */
+    .flecha {
+        display: none;
+    }
+
+    /* Alineación en columna de los botones de contacto */
+    .botones-contacto{
+        flex-direction: column;
+    }
+
+    /* Reducción de márgenes y padding en secciones */
+    .body-seccion, #titulo {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    /* Ajustes en el footer para dispositivos móviles */
+    footer {
+        padding: 20px 10px;
+    }
+
+    /* Alineación en columna de elementos en el footer */
+    .up-footer, .down-footer {
+        flex-direction: column;
+    }
+
+    /* Reducción del tamaño de texto en el footer */
+    footer p, footer a {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    /* Ajuste del tamaño de los botones de contacto y los iconos */
+    .boton-contacto {
+        margin: 10px 0;
+        width: auto;
+    }
+
+    .icono-boton {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Ajuste del ancho de la línea horizontal en el footer */
+    footer hr {
+        margin-top: 10px;
+        width: 80%;
+    }
+}
